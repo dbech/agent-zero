@@ -6,8 +6,10 @@ FROM agent0ai/agent-zero:latest
 # Packages to install — override at build time:
 #   docker build --build-arg EXTRA_PACKAGES="pkg1 pkg2 pkg3" -t myimage .
 #
-# Defaults cover the known CamoFox / camoufox Firefox binary dependencies.
+# Defaults cover the known CamoFox / camoufox Firefox binary dependencies and Docker.
 ARG EXTRA_PACKAGES="\
+    docker \
+    docker-compose \
     xvfb \
     x11vnc \
     websockify \
