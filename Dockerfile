@@ -1,5 +1,12 @@
+# Agent Zero — dependency layer
+# Extends the official Agent Zero image with pre-installed system packages.
+# Pass EXTRA_PACKAGES at build time to customise what gets installed.
 FROM agent0ai/agent-zero:latest
 
+# Packages to install — override at build time:
+#   docker build --build-arg EXTRA_PACKAGES="pkg1 pkg2 pkg3" -t myimage .
+#
+# Defaults cover the known CamoFox / camoufox Firefox binary dependencies.
 ARG EXTRA_PACKAGES="\
     xvfb \
     x11vnc \
@@ -8,7 +15,7 @@ ARG EXTRA_PACKAGES="\
     libdbus-glib-1-2 \
     libx11-xcb1 \
     libxt6 \
-    libasound2 \
+    libasound2t64 \
     libpulse0 \
     libxcomposite1 \
     libxdamage1 \
