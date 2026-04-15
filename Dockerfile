@@ -31,7 +31,21 @@ ARG EXTRA_PACKAGES="\
     libdrm2 \
     libgbm1 \
     libpango-1.0-0 \
-    libcairo2"
+    libcairo2 \
+    libxrender1 \
+    libxtst6 \
+    libxkbcommon0 \
+    libxshmfence1 \
+    libpangocairo-1.0-0 \
+    fonts-freefont-ttf \
+    fonts-liberation \
+    fonts-noto \
+    fonts-noto-color-emoji \
+    fontconfig \
+    python3-websockify \
+    ca-certificates \
+    curl \
+    git"
 
 RUN apt-get update \
     && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends $EXTRA_PACKAGES \
